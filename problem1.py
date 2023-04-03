@@ -33,5 +33,10 @@ import os
 os.system('cls')
 
 
-print("Enter in the coefficients for a quadratic equation in the format:")
-print("  ax^2 + bx + c = 0")
+print("\nEnter in the coefficients for a quadratic equation in the format: ",end=" ")
+print("ax^2 + bx + c = 0\n")
+
+while True:
+    a = input("Enter a value for a: ")
+    b = input("Enter a value for b: ")
+    c = input("Enter a value for c: ")
