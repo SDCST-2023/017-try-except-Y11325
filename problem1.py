@@ -30,13 +30,37 @@ c:16
 The roots are -4.0 and -4.0
 """
 import os
+import math
 os.system('cls')
-
-
-print("\nEnter in the coefficients for a quadratic equation in the format: ",end=" ")
-print("ax^2 + bx + c = 0\n")
-
 while True:
-    a = input("Enter a value for a: ")
-    b = input("Enter a value for b: ")
-    c = input("Enter a value for c: ")
+  while True:
+    try:
+      print("\nEnter in the coefficients for a quadratic equation in the format: \nax^2 + bx + c = 0\n")
+
+      a = (input("Enter a: "))
+      a = int(a)
+      b = (input("Enter b: "))
+      b = int(b)
+      c = (input("Enter c: "))
+      c = int(c)
+      dis = math.pow(b,2) - 4 * a * c
+      dis = int(dis)
+
+      x1 = (-b + math.sqrt(math.pow(b,2) - 4 * a * c))/(2*a)
+      x2 = (-b - math.sqrt(math.pow(b,2) - 4 * a * c))/(2*a)
+      print(f"\nThe roots are {round(x1,2)} and {round(x2,2)}\n")
+      break
+
+    except:
+      if a == str(a) or b == str(b) or c == str(c):
+        print("\nThose are not valid values for a, b or c\n")
+      elif dis < 0:
+        print("\nThere are no real roots to the equation\n")
+        break
+  
+  again = input("Again?(y/n): ")
+  if again == "y":
+    continue
+  elif again == "n":
+    print("---The End---\n\n")
+    break
